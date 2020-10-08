@@ -1,0 +1,7 @@
+---
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+images:
+  - name: jenkins/jenkins
+    newTag: 2.249.1-lts
