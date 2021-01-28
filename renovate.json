@@ -4,5 +4,18 @@
   ],
   "terraform": {
     "fileMatch": ["(^|/)terragrunt\\.hcl$"]
-  }
+  },
+  "packageRules": [
+    {
+      "groupName": "Cypress",
+      "managers": [
+        "dockerfile",
+        "npm"
+      ],
+      "packagePatterns": [
+        "^cypress/included$",
+        "^cypress$"
+      ]
+    }
+  ]
 }
