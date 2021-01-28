@@ -12,6 +12,7 @@
         "dockerfile",
         "npm"
       ],
+      "additionalBranchPrefix": "",
       "packagePatterns": [
         "^cypress/included$",
         "^cypress$"
