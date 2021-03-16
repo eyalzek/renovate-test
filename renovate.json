@@ -7,6 +7,7 @@
   },
   "enabledManagers": ["kubernetes"],
   "packageRules": [{
+    "matchDatasources": ["docker"],
     "matchPackageNames": ["quay.io/bitnami/sealed-secrets-controller"],
     "versioning": "semver"
   }]
