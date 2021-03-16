@@ -1,0 +1,49 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sealed-secrets-controller
+spec:
+  selector:
+    matchLabels:
+      app: sealed-secrets-controller
+  template:
+    metadata:
+      labels:
+        app: sealed-secrets-controller
+      annotations:
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "8080"
+        cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+    spec:
+      serviceAccountName: sealed-secrets-controller
+      containers:
+        - name: sealed-secrets-controller
+          image: quay.io/bitnami/sealed-secrets-controller:v0.12.5
+          command:
+            - controller
+            - --update-status
+          ports:
+            - containerPort: 8080
+              name: http
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: http
+          securityContext:
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1001
+          volumeMounts:
+            - name: tmp
+              mountPath: /tmp
+      securityContext:
+        fsGroup: 65534
+      volumes:
+        - name: tmp
+          emptyDir: {}
+
