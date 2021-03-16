@@ -10,6 +10,7 @@
     "matchDatasources": ["docker"],
     "matchPackageNames": ["quay.io/bitnami/sealed-secrets-controller"],
     "respectLatest": false,
-    "versioning": "semver"
+    "versioning": "semver",
+    "allowedversions": "/^v\\d+\\.\\d+\\.\\d+$/"
   }]
 }
