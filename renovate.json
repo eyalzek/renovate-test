@@ -2,6 +2,10 @@
   "extends": [
     "config:base"
   ],
+  "kubernetes": {
+    "fileMatch": ["\\.yaml$"]
+  },
+  "enabledManagers": ["kubernetes"],
   "packageRules": [{
     "matchPackageNames": ["quay.io/bitnami/sealed-secrets-controller"],
     "versioning": "semver"
