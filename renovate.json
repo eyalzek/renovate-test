@@ -11,6 +11,6 @@
     "matchPackageNames": ["quay.io/bitnami/sealed-secrets-controller"],
     "respectLatest": false,
     "versioning": "semver",
-    "allowedversions": "/^v\\d+\\.\\d+\\.\\d+$/"
+    "allowedVersions": "/^v\\d+\\.\\d+\\.\\d+$/"
   }]
 }
