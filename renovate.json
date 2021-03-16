@@ -1,22 +1,5 @@
 {
   "extends": [
     "config:base"
-  ],
-  "terraform": {
-    "fileMatch": ["(^|/)terragrunt\\.hcl$"]
-  },
-  "packageRules": [
-    {
-      "groupName": "Cypress",
-      "managers": [
-        "dockerfile",
-        "npm"
-      ],
-      "additionalBranchPrefix": "",
-      "packagePatterns": [
-        "^cypress/included$",
-        "^cypress$"
-      ]
-    }
   ]
 }
