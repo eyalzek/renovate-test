@@ -19,7 +19,7 @@ spec:
       serviceAccountName: sealed-secrets-controller
       containers:
         - name: sealed-secrets-controller
-          image: quay.io/bitnami/sealed-secrets-controller:v0.12.5
+          image: quay.io/bitnami/sealed-secrets-controller:v0.17.3
           command:
             - controller
             - --update-status
